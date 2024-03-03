@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { fetchProjectEvents } from '../../services/nostrService';
 import { Project } from '../../types/Project';
 import defaultImage from '../../assets/default_image.png';
-import ProjectCard from './ProjectCard'; 
+import ProjectDashboard from './ProjectDashboard'; 
 
 const ProjectsGrid: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -62,12 +62,12 @@ const ProjectsGrid: React.FC = () => {
         ))}
       </SimpleGrid>
 
-      <Modal isOpen={isOpen} onClose={onClose}>
+      <Modal isOpen={isOpen} onClose={onClose} size="xl">
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>{selectedProject?.display_name}</ModalHeader>
           <ModalBody>
-            {selectedProject && <ProjectCard project={selectedProject} />}
+            {selectedProject && <ProjectDashboard project={selectedProject} />}
           </ModalBody>
           <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={onClose}>

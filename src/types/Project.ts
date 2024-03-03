@@ -8,4 +8,5 @@ export interface Project {
     nip05: string;
     lud16: string;
     website: string;
+    pubkey: string;
   }

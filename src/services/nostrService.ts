@@ -23,14 +23,10 @@ export async function fetchProjectEvents() {
       const filteredEvents = Array.from(events).filter(event => {
         return event.created_at ? event.created_at > nowInSeconds - thirtyDaysInSeconds : false;
       });
-
-      console.log(filteredEvents);
     
       const parsedEvents = Array.from(filteredEvents).map((event) => {
         return {...JSON.parse(event.content), pubkey: event.pubkey};
       });
-
-      console.log(parsedEvents);
      
       return parsedEvents;
     } catch (error) {

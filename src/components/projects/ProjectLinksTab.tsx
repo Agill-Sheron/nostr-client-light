@@ -27,8 +27,6 @@ const ProjectLinksTab: React.FC<ProjectLinksProps> = ({ pubkey }) => {
     return link.length > maxLength ? link.substring(0, maxLength) + '...' : link;
   };
   
-
-  // Function to render icon based on link type
   const renderIcon = (type: string) => {
     switch (type) {
       case 'github':
@@ -46,7 +44,7 @@ const ProjectLinksTab: React.FC<ProjectLinksProps> = ({ pubkey }) => {
 
   return (
     <Box display="flex" flexDirection="column" gap="4">
-      {links?.github && links?.twitter && links?.instagram && links?.nostr && links?.other && links.other.length > 0 && (
+      {(links?.github || links?.twitter || links?.instagram || links?.nostr) && (
         <>
           <Text fontSize="xl" fontWeight="bold">Main Links</Text>
           <Box mt="4" display="flex" flexDirection="row" justifyContent="start" gap="4">

@@ -17,7 +17,6 @@ const ProjectDashboard: React.FC<ProjectDashboardProps> = ({ project }) => {
         <TabList mb="1em">
           <Tab>General</Tab>
           <Tab>Links</Tab>
-          <Tab>Zaps</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
@@ -25,9 +24,6 @@ const ProjectDashboard: React.FC<ProjectDashboardProps> = ({ project }) => {
           </TabPanel>
           <TabPanel>
             <ProjectLinksTab pubkey={project.pubkey} />
-          </TabPanel>
-          <TabPanel>
-        
           </TabPanel>
         </TabPanels>
       </Tabs>
